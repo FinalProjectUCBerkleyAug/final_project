@@ -1,0 +1,12 @@
+  [1m[35m (299.5ms)[0m  [1m[35mCREATE DATABASE "ohpets_development" ENCODING = 'unicode'[0m
+  ↳ /home/vagrant/.rbenv/versions/2.5.3/bin/rake:23
+  [1m[35m (238.1ms)[0m  [1m[35mCREATE DATABASE "ohpets_test" ENCODING = 'unicode'[0m
+  ↳ /home/vagrant/.rbenv/versions/2.5.3/bin/rake:23
+Started GET "/" for 10.0.2.2 at 2019-12-04 21:14:37 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/vagrant/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/railties-5.2.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/vagrant/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/railties-5.2.4/lib/rails/templates/rails/welcome/index.html.erb (4.6ms)
+Completed 200 OK in 17ms (Views: 9.1ms | ActiveRecord: 0.0ms)
+
+
