@@ -10,3 +10,19 @@ Processing by Rails::WelcomeController#index as HTML
 Completed 200 OK in 17ms (Views: 9.1ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for 10.0.2.2 at 2019-12-05 21:43:45 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 2178ms (Views: 2134.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 10.0.2.2 at 2019-12-05 21:44:21 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 159ms (Views: 132.8ms | ActiveRecord: 0.0ms)
+
+
