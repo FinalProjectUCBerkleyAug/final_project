@@ -82,3 +82,42 @@ Migrating to DeviseCreateUsers (20191205233632)
   ↳ /home/vagrant/.rbenv/versions/2.5.3/bin/rake:23
   [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ /home/vagrant/.rbenv/versions/2.5.3/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3196246514875296015)[0m
+  ↳ /home/vagrant/.rbenv/versions/2.5.3/bin/rake:23
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/vagrant/.rbenv/versions/2.5.3/bin/rake:23
+Migrating to CreatePets (20191211001515)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/vagrant/.rbenv/versions/2.5.3/bin/rake:23
+  [1m[35m (6.9ms)[0m  [1m[35mCREATE TABLE "pets" ("id" bigserial primary key, "name" text, "description" text, "species" character varying, "breed" character varying, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20191211001515_create_pets.rb:3
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE  INDEX  "index_pets_on_user_id" ON "pets"  ("user_id")[0m
+  ↳ db/migrate/20191211001515_create_pets.rb:12
+  [1m[36mActiveRecord::SchemaMigration Create (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191211001515"]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.3/bin/rake:23
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/vagrant/.rbenv/versions/2.5.3/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/vagrant/.rbenv/versions/2.5.3/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/vagrant/.rbenv/versions/2.5.3/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(3196246514875296015)[0m
+  ↳ /home/vagrant/.rbenv/versions/2.5.3/bin/rake:23
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/vagrant/.rbenv/versions/2.5.3/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3196246514875296015)[0m
+  ↳ /home/vagrant/.rbenv/versions/2.5.3/bin/rake:23
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/vagrant/.rbenv/versions/2.5.3/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.3/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/vagrant/.rbenv/versions/2.5.3/bin/rake:23
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/vagrant/.rbenv/versions/2.5.3/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(3196246514875296015)[0m
+  ↳ /home/vagrant/.rbenv/versions/2.5.3/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/vagrant/.rbenv/versions/2.5.3/bin/rake:23
