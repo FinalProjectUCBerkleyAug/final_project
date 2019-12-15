@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2019_12_11_001515) do
+=======
+ActiveRecord::Schema.define(version: 2019_12_10_213301) do
+>>>>>>> master
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +38,7 @@ ActiveRecord::Schema.define(version: 2019_12_11_001515) do
     t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
+<<<<<<< HEAD
   create_table "pets", force: :cascade do |t|
     t.text "name"
     t.text "description"
@@ -45,6 +50,8 @@ ActiveRecord::Schema.define(version: 2019_12_11_001515) do
     t.index ["user_id"], name: "index_pets_on_user_id"
   end
 
+=======
+>>>>>>> master
   create_table "photos", force: :cascade do |t|
     t.text "caption"
     t.integer "post_id"
