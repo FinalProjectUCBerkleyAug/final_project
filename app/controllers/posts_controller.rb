@@ -1,11 +1,11 @@
 class PostsController < ApplicationController
+
   def index
-    @posts = Post.find(params[:post_id])
+
   end
 
-  def show
-    @post = Post.find(params[:id])
-    @photo = Photo.new
+  def list
+    @posts = Post.timeline(current_user)
   end
 
   private
