@@ -8,9 +8,26 @@
   text-align: center;
   background-color: transparent;
 }
+.navbar {
+  background-color: #C4C0C6;
+  font-family: 'PT Sans', sans-serif;
+}
 .navbar>.container-fluid .nav-brand-centered {
   margin-left: 40%;
 }
 .logins {
   margin-left: 10px;
+}
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #BD3A3A;
+  color: white;
+  font-family: 'PT Sans', sans-serif;
+  text-align: center;
+}
+#build-credit {
+  margin-top: 5px;
 }
