@@ -1,1 +1,16 @@
 @import 'bootstrap';
+
+.navbar-brand-centered {
+  position: absolute;
+  left: 40%;
+  display: block;
+  width: 160px;
+  text-align: center;
+  background-color: transparent;
+}
+.navbar>.container-fluid .nav-brand-centered {
+  margin-left: 40%;
+}
+.logins {
+  margin-left: 10px;
+}

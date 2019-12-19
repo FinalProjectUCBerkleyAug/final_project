@@ -1,6 +1,37 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Create Post</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Pets to Follow</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Notifications</a>
+          </li>
+        </ul>
+        <a class="navbar-brand navbar-brand-centered" href="#">Navbar</a>
+      </div>
+
+      <ul class="navbar-nav mr-auto logins">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Log In</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Sign up</a>
+        </li>
+      </ul>
+    </nav>
+
     <title>Ohpets</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
