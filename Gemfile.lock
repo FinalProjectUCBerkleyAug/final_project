@@ -55,17 +55,10 @@ GEM
     bindex (0.8.1)
     bootsnap (1.4.5)
       msgpack (~> 1.0)
-<<<<<<< HEAD
     bootstrap (4.4.1)
       autoprefixer-rails (>= 9.1.0)
       popper_js (>= 1.14.3, < 2)
       sassc-rails (>= 2.0.0)
-=======
-    bootstrap-sass (3.0.3.0)
-      sass (~> 3.2)
-    bootstrap-will_paginate (0.0.11)
-      will_paginate
->>>>>>> post_controller
     builder (3.2.3)
     byebug (11.0.1)
     capybara (3.29.0)
@@ -242,12 +235,7 @@ PLATFORMS
 DEPENDENCIES
   betterlorem (~> 0.1.2)
   bootsnap (>= 1.1.0)
-<<<<<<< HEAD
   bootstrap (~> 4.4.1)
-=======
-  bootstrap-sass (~> 3.0.3.0)
-  bootstrap-will_paginate (~> 0.0.10)
->>>>>>> post_controller
   byebug
   capybara (>= 2.15)
   carrierwave (~> 1.0)
