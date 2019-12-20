@@ -64,7 +64,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 
 gem 'carrierwave', '~> 1.0'
-
 gem 'jquery-rails'
 gem 'popper_js', '~> 1.9', '>= 1.9.9'
 gem 'bootstrap', '~> 4.4.1'
@@ -73,4 +72,4 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.3.3'
 end
 
-gem 'will_paginate', '~> 3.0.5'
+gem 'will_paginate'

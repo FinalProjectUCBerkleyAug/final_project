@@ -1,1 +1,6 @@
-$("#my-posts").append("<tbody class='page'><%= escape_javascript(render(@posts)) %></tbody>");
+$('#posts').append('<%= j render(@posts) %>');
+<% if @posts.next_page %>
+  $('.pagination').replaceWith('<%= j will_paginate(@posts) %>');
+<% else %>
+  $('.pagination').remove();
+<% end %>
