@@ -1,0 +1,14 @@
+<div>
+
+        <% if false %>
+        Commenting this part out for photo uploading later
+
+          <% if post.photos.present? %>
+            <%= image_tag @photo_url.to_s.last %>
+          <% end %>
+
+        <% end %>
+
+  <h5><%= link_to post.content, post_path(post) %></h5>
+  <p><%= post.created_at.strftime("%B, %d %Y, %l:%M%P") %></p>
+</div>
