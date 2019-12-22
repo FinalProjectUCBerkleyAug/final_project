@@ -1,3 +1,3 @@
 class Post < ApplicationRecord
-  mount_uploader :video, VideoUploader
+#  mount_uploader :video, VideoUploader
 end
