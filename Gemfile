@@ -75,3 +75,4 @@ end
 
 gem 'will_paginate', '~> 3.0.5'
 gem 'carrierwave-aws'
+gem 'simple_form'

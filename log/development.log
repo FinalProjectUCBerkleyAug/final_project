@@ -2125,3 +2125,141 @@ Migrating to AddVideoToLessons (20191222174337)
   ↳ /home/vagrant/.rbenv/versions/2.5.3/bin/rake:23
   [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ /home/vagrant/.rbenv/versions/2.5.3/bin/rake:23
+Started GET "/posts/new" for 10.0.2.2 at 2019-12-22 20:20:02 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/vagrant/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4/lib/active_record/log_subscriber.rb:98
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (178.7ms)
+Completed 500 Internal Server Error in 290ms (ActiveRecord: 4.6ms)
+
+
+  
+SyntaxError (/vagrant/src/final_team_project/final_project/app/models/pet.rb:7: syntax error, unexpected '\n', expecting =>
+    @pets.timeline.map
+                      ^):
+  
+app/models/pet.rb:7: syntax error, unexpected '\n', expecting =>
+app/views/posts/new.html.erb:5:in `block in _app_views_posts_new_html_erb___4088357625870850463_70100387783980'
+app/views/posts/new.html.erb:3:in `_app_views_posts_new_html_erb___4088357625870850463_70100387783980'
+Started GET "/posts/new" for 10.0.2.2 at 2019-12-22 23:21:15 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/vagrant/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4/lib/active_record/log_subscriber.rb:98
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (60.1ms)
+Completed 500 Internal Server Error in 165ms (ActiveRecord: 3.1ms)
+
+
+  
+SyntaxError (/vagrant/src/final_team_project/final_project/app/models/pet.rb:7: syntax error, unexpected '\n', expecting =>
+    @pets.map
+             ^):
+  
+app/models/pet.rb:7: syntax error, unexpected '\n', expecting =>
+app/views/posts/new.html.erb:5:in `block in _app_views_posts_new_html_erb__3853475283518119473_70304543731280'
+app/views/posts/new.html.erb:3:in `_app_views_posts_new_html_erb__3853475283518119473_70304543731280'
+Started GET "/posts/new" for 10.0.2.2 at 2019-12-22 23:26:52 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#new as HTML
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 2.8ms)
+
+
+  
+NoMethodError (undefined method `pets' for #<Post:0x00007fe21b52d438>):
+  
+app/controllers/posts_controller.rb:8:in `new'
+Started GET "/posts/new" for 10.0.2.2 at 2019-12-22 23:27:03 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#new as HTML
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `pets' for #<Post:0x00007fe21a9b4ae8>):
+  
+app/controllers/posts_controller.rb:8:in `new'
+Started GET "/posts/new" for 10.0.2.2 at 2019-12-22 23:27:13 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/vagrant/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4/lib/active_record/log_subscriber.rb:98
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (68.0ms)
+Completed 500 Internal Server Error in 206ms (ActiveRecord: 5.5ms)
+
+
+  
+SyntaxError (/vagrant/src/final_team_project/final_project/app/models/pet.rb:7: syntax error, unexpected '\n', expecting =>
+    @pets.all
+             ^):
+  
+app/models/pet.rb:7: syntax error, unexpected '\n', expecting =>
+app/views/posts/new.html.erb:5:in `block in _app_views_posts_new_html_erb__418854732558797792_70055382709120'
+app/views/posts/new.html.erb:3:in `_app_views_posts_new_html_erb__418854732558797792_70055382709120'
+Started GET "/posts/new" for 10.0.2.2 at 2019-12-22 23:31:49 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/vagrant/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4/lib/active_record/log_subscriber.rb:98
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (84.1ms)
+Completed 500 Internal Server Error in 258ms (ActiveRecord: 4.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    2:   <h1>Enter Your Post Here</h1>
+    3:   <%= simple_form_for @posts do |f| %>
+    4:     <%= f.input :content %>
+    5:     <%= select_tag('pet_name', options_from_collection_for_select(@pets.name, :pet_name)) %>
+    6:     <%= f.input :picture %>
+    7:     <%= f.input :video %>
+    8:     <%= f.submit 'Create' %>
+  
+app/views/posts/new.html.erb:5:in `block in _app_views_posts_new_html_erb__1438338153418299564_69945649383620'
+app/views/posts/new.html.erb:3:in `_app_views_posts_new_html_erb__1438338153418299564_69945649383620'
+  [1m[36mPet Load (5.3ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mUser Load (4.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/posts/new" for 10.0.2.2 at 2019-12-22 23:43:44 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/vagrant/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4/lib/active_record/log_subscriber.rb:98
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (80.8ms)
+Completed 500 Internal Server Error in 182ms (ActiveRecord: 3.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `picture' for #<Post:0x00007f9e7294ef68>):
+    2:   <h1>Enter Your Post Here</h1>
+    3:   <%= simple_form_for @posts do |f| %>
+    4:     <%= f.input :content %>
+    5:     <%= f.input :picture %>
+    6:     <%= f.input :video %>
+    7: <% 
+    8: =begin %> Needs help with selection tag~ Pending for adjustment
+  
+app/views/posts/new.html.erb:5:in `block in _app_views_posts_new_html_erb___3641946816702193124_70159251466600'
+app/views/posts/new.html.erb:3:in `_app_views_posts_new_html_erb___3641946816702193124_70159251466600'
+Started GET "/posts/new" for 10.0.2.2 at 2019-12-22 23:49:25 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/vagrant/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4/lib/active_record/log_subscriber.rb:98
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (43.3ms)
+Completed 200 OK in 9962ms (Views: 9913.0ms | ActiveRecord: 2.8ms)
+
+

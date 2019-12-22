@@ -27,5 +27,4 @@
 /config/master.key
 log/development.log
 tmp
->>>>>>> a1307d8f037d1e2f4422f7c4c1225f87dc5406b3
 **/.DS_Store
