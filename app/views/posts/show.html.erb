@@ -1,0 +1,20 @@
+<h1>Comments</h1>
+<br />
+
+<% @post.comments.each do |comment| %>
+  <blockquote>
+    <b><%= comment.message %></b>
+      <%= comment.user.username %>
+  </blockquote>
+<% end %>
+
+<br />
+
+<div>
+  <%= simple_form_for @comment, url: post_comments_path(@post) do |f| %>
+    <%= f.input :message %>
+    <%= f.submit "Add a comment" %>
+  <% end %>
+</div>
+
+
