@@ -3,7 +3,7 @@
     <h1 id="greeting">Hello, Human. Check out these good pets.</h1>
     <div class="row">
       <div class="col-sm-4 post">
-
+        
       </div>
       <div class="col-sm-4 post">
 
@@ -11,12 +11,12 @@
       <div class="col-sm-4 post">
 
       </div>
-      <div id="homepage-buttons">
+      <div class="col-6 offset-4">
         <%= link_to user_session_path do %>
-          <button type="button" class="btn btn-dark btn-lg">Log In</button>
+          <button type="button" class="btn btn-dark btn-lg" id="homepage-buttons">Log In</button>
         <% end %>
         <%= link_to new_user_session_path do %>
-          <button type="button" class="btn btn-dark btn-lg">Sign Up</button>
+          <button type="button" class="btn btn-dark btn-lg" id="homepage-buttons">Sign Up</button>
         <% end %>
       </div>
     </div>
