@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(version: 2019_12_22_174337) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "video"
+    t.integer "pet_id"
   end
 
   create_table "users", force: :cascade do |t|
