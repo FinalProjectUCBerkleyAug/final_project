@@ -12,4 +12,5 @@ Rails.application.routes.draw do
     resources :likes
   end
   resources :users, only: :show
+  resources :recommendations, only: [:index]
 end
