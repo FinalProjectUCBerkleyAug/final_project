@@ -79,7 +79,3 @@ end
 gem 'will_paginate', '~> 3.0.5'
 gem 'carrierwave-aws'
 gem 'simple_form'
-<<<<<<< HEAD
-=======
-
->>>>>>> 0a65fb110f06351a2d8e499a86bed84ea78619d6
