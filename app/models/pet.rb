@@ -1,5 +1,4 @@
 class Pet < ApplicationRecord
   belongs_to :user
-  belongs_to :post
-  has_many :likes
+  has_many :posts
 end
