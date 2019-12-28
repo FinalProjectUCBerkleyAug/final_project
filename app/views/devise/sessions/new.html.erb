@@ -1,17 +1,22 @@
-<body class="content">
+<body>
   <div class="login col-8 offset-2">
-    <h2>Welcome Back</h2>
+    <h1 class="devise-headings">Welcome Back</h1>
+
+    <br />
 
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
       <div class="field">
-        <%= f.label :login %><br />
+        <h5><% f.label :login %>email: </h5>
         <%= f.text_field :login %>
       </div>
 
       <div class="field">
-        <%= f.label :password %><br />
+        <h5><% f.label :password %>password: </h5>
         <%= f.password_field :password, autocomplete: "current-password" %>
       </div>
+
+      <br />
 
       <% if devise_mapping.rememberable? %>
         <div class="field">
@@ -20,11 +25,17 @@
         </div>
       <% end %>
 
+      <br />
+
       <div class="actions">
-        <%= f.submit "Log in" %>
+        <%= f.submit "Log in", class: 'btn btn-dark btn-lg devise-btn' %>
       </div>
     <% end %>
 
+    <br />
+
     <%= render "devise/shared/links" %>
+
+    <br />
   </div>
 </body>
