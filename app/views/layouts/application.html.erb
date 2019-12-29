@@ -20,7 +20,7 @@
       <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Create Post</a>
+            <%= link_to "Create Post", new_post_path, class: "nav-link" %>
           </li>
           <li class="nav-item active">
             <a class="nav-link" href="#">Pets to Follow</a>
@@ -33,12 +33,18 @@
       </div>
 
       <ul class="navbar-nav mr-auto logins">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Log In</a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Sign up</a>
-        </li>
+        <% if user_signed_in? %>
+          <li class="nav-item active">
+            <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'nav-link' %>
+          </li>
+        <% else %>
+          <li class="nav-item active">
+            <%= link_to 'Sign in', new_user_session_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item active">
+            <%= link_to 'Sign up', new_user_registration_path, class: "nav-link" %>
+          </li>
+        <% end %>
       </ul>
     </nav>
 
