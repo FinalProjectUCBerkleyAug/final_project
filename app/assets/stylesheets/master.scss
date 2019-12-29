@@ -2,6 +2,7 @@
 
 body {
   font-family: 'PT Sans', sans-serif;
+  margin: 0;
 }
 .navbar-brand-centered {
   position: absolute;
@@ -33,4 +34,27 @@ body {
 }
 #build-credit {
   margin-top: 5px;
+}
+
+// Devise Styling
+.login, .signup, .forgotpassword, .editpassword, .deviseconfirm {
+  border-radius: 80px;
+  background-color: #D5D5D5;
+  color: white;
+  text-align: center;
+  padding: 15px;
+}
+.btn-dark {
+  background-color: #999999;
+  border-color: #999999;
+}
+.devise-headings {
+  font-weight: bold;
+}
+.devise-btn {
+  font-weight: bold;
+}
+.red-devise-link {
+  color: #BD3A3A;
+  font-weight: bold;
 }

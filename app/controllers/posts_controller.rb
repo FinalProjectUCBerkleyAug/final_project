@@ -5,5 +5,20 @@ class PostsController < ApplicationController
 
   def landing
   end
-end
 
+  def new
+    @posts = Post.new
+  end
+
+  def show
+    @post = Post.find(params[:id])
+    @comment = Comment.new
+    @username = @post.user.username
+  end
+
+  private
+
+  def post_params
+    params.require(:post).permit(:content, :user_id, :pet_id, :photo, :video)
+  end
+end

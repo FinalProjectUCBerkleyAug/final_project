@@ -62,6 +62,9 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'devise'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-facebook'
+gem 'omniauth-twitter'
 
 gem 'carrierwave', '~> 1.0'
 
@@ -74,3 +77,5 @@ source 'https://rails-assets.org' do
 end
 
 gem 'will_paginate', '~> 3.0.5'
+gem 'carrierwave-aws'
+gem 'simple_form'
