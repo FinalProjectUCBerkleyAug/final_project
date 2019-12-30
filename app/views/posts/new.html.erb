@@ -1,0 +1,18 @@
+<div>
+  <h1>Enter Your Post Here</h1>
+  <%= simple_form_for @posts do |f| %>
+    <%= f.input :content %>
+<% 
+=begin %>
+    Pictures and Videos pending for setup.
+    <%= f.input :picture %>
+    <%= f.input :video %>
+ Needs help with selection tag~ Pending for adjustment
+    <%= select_tag('pet_name', options_from_collection_for_select(@pets.name, :pet_name)) %>
+<% 
+=end %>
+  <%= f.collection_select :pet_id, Pet.where(:user_id => current_user.id), :id, :name %>
+    <%= f.submit 'Create' %>
+    <br />
+  <% end %>
+</div>

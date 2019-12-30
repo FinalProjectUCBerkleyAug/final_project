@@ -2,3 +2,20 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#greeting {
+  text-align: center;
+}
+.post {
+  height: 400px;
+}
+#greeting {
+  font-weight: bold;
+}
+#homepage-buttons {
+  margin-left: 30px;
+  margin-right: 30px;
+}
+.btn {
+  background-color: #999999;
+  border: #999999;
+}

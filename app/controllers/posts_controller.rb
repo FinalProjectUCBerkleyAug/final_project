@@ -3,6 +3,18 @@ class PostsController < ApplicationController
     @posts = Post.timeline(current_user).order('created_at DESC').paginate(page: params[:page], per_page: 10)
   end
 
+  def landing
+  end
+
+  def new
+    @posts = Post.new
+  end
+
+  def show
+    @post = Post.find(params[:id])
+    @comment = Comment.new
+    @username = @post.user.username
+  end
 
   private
 
@@ -10,4 +22,3 @@ class PostsController < ApplicationController
     params.require(:post).permit(:content, :user_id, :pet_id, :photo, :video)
   end
 end
-

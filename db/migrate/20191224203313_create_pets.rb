@@ -1,14 +1,13 @@
 class CreatePets < ActiveRecord::Migration[5.2]
   def change
+    connection.execute("DROP TABLE IF EXISTS pets")
     create_table :pets do |t|
-      t.text :name
-      t.text :description
-      t.string :species
-      t.string :breed
+      t.string :name
       t.integer :user_id
+      t.string :breed
+      t.string :species
+
       t.timestamps
     end
-
-    add_index :pets, :user_id
   end
 end
