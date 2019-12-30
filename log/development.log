@@ -10797,3 +10797,315 @@ Completed 200 OK in 518ms (Views: 486.1ms | ActiveRecord: 1.4ms)
 
 
 >>>>>>> user_connection
+Started GET "/" for 10.0.2.2 at 2019-12-30 22:30:55 +0000
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/vagrant/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by PostsController#landing as HTML
+  Rendering posts/landing.html.erb within layouts/application
+  Rendered posts/landing.html.erb within layouts/application (1.2ms)
+Started GET "/" for 10.0.2.2 at 2019-12-30 22:30:59 +0000
+Processing by PostsController#landing as HTML
+  Rendering posts/landing.html.erb within layouts/application
+  Rendered posts/landing.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 58], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:37
+Completed 200 OK in 9721ms (Views: 9691.8ms | ActiveRecord: 5.0ms)
+
+
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 58], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:37
+Completed 200 OK in 5941ms (Views: 5881.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/posts" for 10.0.2.2 at 2019-12-30 22:31:36 +0000
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 58], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:3
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 195ms (ActiveRecord: 3.7ms)
+
+
+  
+SyntaxError (/vagrant/src/final_team_project/final_project/app/views/posts/index.html.erb:23: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/posts/index.html.erb:23: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/posts" for 10.0.2.2 at 2019-12-30 22:31:46 +0000
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 58], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:3
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."user_id" = $1 ORDER BY created_at DESC LIMIT $2 OFFSET $3[0m  [["user_id", 58], ["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/posts/index.html.erb:5
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered posts/index.html.erb within layouts/application (511.2ms)
+Completed 500 Internal Server Error in 680ms (ActiveRecord: 1.2ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `post' for #<#<Class:0x00007f19bfa38218>:0x00007f19c4d4a0a0>
+Did you mean?  @posts):
+    13: 
+    14:         <% end %>
+    15: 
+    16:   <h5><%= link_to 'post.content', post_path(post) %></h5>
+    17:   <p><%= post.created_at.strftime("%B, %d %Y, %l:%M%P") %></p>
+    18: </div>
+    19: 
+  
+app/views/posts/index.html.erb:16:in `_app_views_posts_index_html_erb__1498431220005068972_69874326590700'
+Started GET "/posts" for 10.0.2.2 at 2019-12-30 22:32:07 +0000
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 58], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:3
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."user_id" = $1 ORDER BY created_at DESC LIMIT $2 OFFSET $3[0m  [["user_id", 58], ["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/posts/index.html.erb:5
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered posts/index.html.erb within layouts/application (36.2ms)
+Completed 500 Internal Server Error in 196ms (ActiveRecord: 1.2ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"posts", :id=>nil}, missing required keys: [:id]):
+    13: 
+    14:         <% end %>
+    15: 
+    16:   <h5><%= link_to 'post.content', post_path(@post) %></h5>
+    17:   <p><%= post.created_at.strftime("%B, %d %Y, %l:%M%P") %></p>
+    18: </div>
+    19: 
+  
+app/views/posts/index.html.erb:16:in `_app_views_posts_index_html_erb__1498431220005068972_69873917465400'
+Started GET "/posts" for 10.0.2.2 at 2019-12-30 22:32:10 +0000
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 58], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:3
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."user_id" = $1 ORDER BY created_at DESC LIMIT $2 OFFSET $3[0m  [["user_id", 58], ["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/posts/index.html.erb:5
+  Rendered collection of templates [0 times] (0.1ms)
+  Rendered posts/index.html.erb within layouts/application (23.9ms)
+Completed 500 Internal Server Error in 120ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"posts", :id=>nil}, missing required keys: [:id]):
+    13: 
+    14:         <% end %>
+    15: 
+    16:   <h5><%= link_to 'post.content', post_path(@post) %></h5>
+    17:   <p><%= post.created_at.strftime("%B, %d %Y, %l:%M%P") %></p>
+    18: </div>
+    19: 
+  
+app/views/posts/index.html.erb:16:in `_app_views_posts_index_html_erb__1498431220005068972_69874268024800'
+Started GET "/posts" for 10.0.2.2 at 2019-12-30 22:32:22 +0000
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 58], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:3
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 130ms (ActiveRecord: 0.5ms)
+
+
+  
+SyntaxError (/vagrant/src/final_team_project/final_project/app/views/posts/index.html.erb:31: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/posts/index.html.erb:31: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/posts" for 10.0.2.2 at 2019-12-30 22:32:32 +0000
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 58], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:3
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 159ms (ActiveRecord: 1.1ms)
+
+
+  
+SyntaxError (/vagrant/src/final_team_project/final_project/app/views/posts/index.html.erb:31: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/posts/index.html.erb:31: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/posts" for 10.0.2.2 at 2019-12-30 22:32:53 +0000
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 58], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:3
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (2.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."user_id" = $1 ORDER BY created_at DESC LIMIT $2 OFFSET $3[0m  [["user_id", 58], ["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/posts/index.html.erb:5
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered posts/index.html.erb within layouts/application (617.9ms)
+Completed 500 Internal Server Error in 787ms (ActiveRecord: 3.2ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `post' for #<#<Class:0x00007f19bfa38218>:0x00007f19913260c0>
+Did you mean?  @posts):
+    19: 
+    20:           <% end %>
+    21: 
+    22:     <h5><%= link_to 'post.content', post_path(post) %></h5>
+    23:     <p><%= post.created_at.strftime("%B, %d %Y, %l:%M%P") %></p>
+    24:   </div>
+    25: 
+  
+app/views/posts/index.html.erb:22:in `_app_views_posts_index_html_erb__1498431220005068972_69873893455100'
+Started GET "/posts" for 10.0.2.2 at 2019-12-30 22:32:57 +0000
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 58], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:3
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."user_id" = $1 ORDER BY created_at DESC LIMIT $2 OFFSET $3[0m  [["user_id", 58], ["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/posts/index.html.erb:5
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered posts/index.html.erb within layouts/application (708.6ms)
+Completed 500 Internal Server Error in 806ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `post' for #<#<Class:0x00007f19bfa38218>:0x00007f1994366cf8>
+Did you mean?  @posts):
+    19: 
+    20:           <% end %>
+    21: 
+    22:     <h5><%= link_to 'post.content', post_path(post) %></h5>
+    23:     <p><%= post.created_at.strftime("%B, %d %Y, %l:%M%P") %></p>
+    24:   </div>
+    25: 
+  
+app/views/posts/index.html.erb:22:in `_app_views_posts_index_html_erb__1498431220005068972_69873918753600'
+Started GET "/posts" for 10.0.2.2 at 2019-12-30 22:33:05 +0000
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 58], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:3
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."user_id" = $1 ORDER BY created_at DESC LIMIT $2 OFFSET $3[0m  [["user_id", 58], ["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/posts/index.html.erb:5
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered posts/index.html.erb within layouts/application (28.1ms)
+Completed 500 Internal Server Error in 156ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"posts", :id=>nil}, missing required keys: [:id]):
+    19: 
+    20:           <% end %>
+    21: 
+    22:     <h5><%= link_to 'post.content', post_path(@post) %></h5>
+    23:     <p><%= post.created_at.strftime("%B, %d %Y, %l:%M%P") %></p>
+    24:   </div>
+    25: 
+  
+app/views/posts/index.html.erb:22:in `_app_views_posts_index_html_erb__1498431220005068972_69873884001600'
+Started GET "/posts" for 10.0.2.2 at 2019-12-30 22:33:32 +0000
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 58], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:3
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."user_id" = $1 ORDER BY created_at DESC LIMIT $2 OFFSET $3[0m  [["user_id", 58], ["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/posts/index.html.erb:5
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered posts/index.html.erb within layouts/application (23.5ms)
+Completed 500 Internal Server Error in 155ms (ActiveRecord: 2.5ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"posts", :id=>nil}, missing required keys: [:id]):
+    13: 
+    14:           <% end %>
+    15: 
+    16:     <h5><%= link_to 'post.content', post_path(@post) %></h5>
+    17:     <p><%= post.created_at.strftime("%B, %d %Y, %l:%M%P") %></p>
+    18:   </div>
+    19: 
+  
+app/views/posts/index.html.erb:16:in `_app_views_posts_index_html_erb__1498431220005068972_69874326526640'
+Started GET "/posts" for 10.0.2.2 at 2019-12-30 22:33:40 +0000
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/vagrant/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 58], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:3
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (1.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."user_id" = $1 ORDER BY created_at DESC LIMIT $2 OFFSET $3[0m  [["user_id", 58], ["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/posts/index.html.erb:5
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered posts/index.html.erb within layouts/application (60.5ms)
+Completed 500 Internal Server Error in 271ms (ActiveRecord: 11.5ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"posts", :id=>nil}, missing required keys: [:id]):
+    13: 
+    14:           <% end %>
+    15: 
+    16:     <h5><%= link_to 'post.content', post_path(@post) %></h5>
+    17:     <p><%= post.created_at.strftime("%B, %d %Y, %l:%M%P") %></p>
+    18:   </div>
+    19: 
+  
+app/views/posts/index.html.erb:16:in `_app_views_posts_index_html_erb__841670896157561607_69994257675600'
+Started GET "/posts" for 10.0.2.2 at 2019-12-30 22:34:04 +0000
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 58], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:3
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."user_id" = $1 ORDER BY created_at DESC LIMIT $2 OFFSET $3[0m  [["user_id", 58], ["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/posts/index.html.erb:5
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered posts/index.html.erb within layouts/application (545.6ms)
+Completed 500 Internal Server Error in 663ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `post' for #<#<Class:0x00007f519dbad420>:0x00007f519e644b18>
+Did you mean?  @posts):
+    13: 
+    14:           <% end %>
+    15: 
+    16:     <h5><%= link_to 'post.content', post_path(post) %></h5>
+    17:     <p><%= post.created_at.strftime("%B, %d %Y, %l:%M%P") %></p>
+    18:   </div>
+    19: 
+  
+app/views/posts/index.html.erb:16:in `_app_views_posts_index_html_erb__841670896157561607_69994263227120'
+Started GET "/posts" for 10.0.2.2 at 2019-12-30 22:35:16 +0000
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 58], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:3
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."user_id" = $1 ORDER BY created_at DESC LIMIT $2 OFFSET $3[0m  [["user_id", 58], ["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/posts/index.html.erb:5
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered posts/index.html.erb within layouts/application (42.3ms)
+Completed 500 Internal Server Error in 209ms (ActiveRecord: 1.2ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"posts", :id=>nil}, missing required keys: [:id]):
+    13: 
+    14:           <% end %>
+    15: 
+    16:   <h5><%= link_to 'post.content', post_path(@post) %></h5>
+    17:   <p><%= post.created_at.strftime("%B, %d %Y, %l:%M%P") %></p>
+    18: </div>
+    19: 
+  
+app/views/posts/index.html.erb:16:in `_app_views_posts_index_html_erb__841670896157561607_69994269209740'
+Started GET "/posts" for 10.0.2.2 at 2019-12-30 22:37:49 +0000
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 58], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:3
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."user_id" = $1 ORDER BY created_at DESC LIMIT $2 OFFSET $3[0m  [["user_id", 58], ["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/posts/index.html.erb:5
+  Rendered posts/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 2079ms (Views: 2043.3ms | ActiveRecord: 0.8ms)
+
+
