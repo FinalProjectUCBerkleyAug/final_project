@@ -16,4 +16,5 @@ class ApplicationController < ActionController::Base
   def show
   	# user profile
   end
+
 end

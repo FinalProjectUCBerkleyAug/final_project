@@ -23,7 +23,7 @@
             <a class="nav-link" href="#">Create Post</a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="#">Pets to Follow</a>
+            <%= link_to "Pets to Follow", recommendations_path, class: 'nav-link' %>
           </li>
           <li class="nav-item active">
             <a class="nav-link" href="#">Notifications</a>
@@ -34,10 +34,10 @@
 
       <ul class="navbar-nav mr-auto logins">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Log In</a>
+          <%= link_to 'Log In', user_session_path, class: 'nav-link' %>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="#">Sign up</a>
+          <%= link_to 'Sign Up', new_user_session_path, class: 'nav-link' %>
         </li>
       </ul>
     </nav>
