@@ -22,6 +22,9 @@ class PostsController < ApplicationController
     @username = @post.user.username
   end
 
+  def create 
+  
+  end
   private
 
   def post_params
