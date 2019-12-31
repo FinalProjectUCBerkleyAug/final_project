@@ -3,7 +3,13 @@ class PostsController < ApplicationController
     @posts = Post.timeline(current_user).order('created_at DESC').paginate(page: params[:page], per_page: 10)
   end
 
+  def create
+    @post = current_user.posts.create(post_params)
+    redirect_to posts_path
+  end
+
   def landing
+
   end
 
   def new
