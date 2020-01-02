@@ -26,25 +26,28 @@ class PostsController < ApplicationController
 
   def like
     @post = Post.find(params[:id])
-    Like.create!(likeable: @post, user: current_user, like: params[:like])
-
-    respond_to do |format|
-      format.html do
-        flash[:success] = "Like Counted!"
-        redirect_to post_path
+    if already_liked?
+      flash[:notice] = "Already Liked!"
+      redirect_to post_path(@post)
+    else
+      Like.create!(likeable: @post, user: current_user, like: params[:like])
+      respond_to do |format|
+        format.html do
+          flash[:success] = "Like Counted!"
+          redirect_to post_path(@post)
+        end
       end
     end
-
   end
 
   private
 
-  def like_params
-    params.require(:like).permit(:likeable_type, :likeable_id, :user_id)
-  end
-
   def post_params
     params.require(:post).permit(:content, :user_id, :pet_id, :photo, :video)
+  end
+
+  def already_liked?
+    Like.where(likeable: @post, user: current_user, like: params[:like]).exists?
   end
 
 end
