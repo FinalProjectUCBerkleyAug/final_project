@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
-  resources :pets
+  root 'posts#landing'
+  resources :pets do
+    member do
+      post 'like'
+    end
+  end
   devise_for :users, :controllers => {:registrations => "registrations"}
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root 'posts#landing'
   resources :posts do
     resources :comments do
       :create
@@ -10,7 +14,9 @@ Rails.application.routes.draw do
         patch :destroy
       end
     end
-    resources :likes
+    member do
+      post 'like'
+    end
   end
   resources :users, only: :show
 

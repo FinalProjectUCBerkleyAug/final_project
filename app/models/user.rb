@@ -7,9 +7,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, 
          :trackable, :authentication_keys => {email: true, login: false}
 
-#  has_many :comments
+  has_many :comments
   has_many :posts
-  has_many :likes
   has_many :pets
 
   def login

@@ -1,6 +1,14 @@
 <h1>Post</h1>
 <p>Post Details - containing pictures, video, pet_id(pet_tag), and comments</p>
 
+
+<div>
+  <span><%= link_to like_post_path(@post, like: true), method: 'post' do %></span>
+  <span>Thumb up!</span><% end %>
+  <span id="post_<%= @post.id %>_likes"><%= @post.likes.size %> likes</span>
+</div>
+
+
 <h1>Comments</h1>
 <br />
 

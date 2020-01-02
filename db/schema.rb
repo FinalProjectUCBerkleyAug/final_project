@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_30_011227) do
+ActiveRecord::Schema.define(version: 2020_01_02_042357) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,12 +26,13 @@ ActiveRecord::Schema.define(version: 2019_12_30_011227) do
   end
 
   create_table "likes", force: :cascade do |t|
-    t.bigint "post_id"
-    t.bigint "user_id"
+    t.boolean "like"
+    t.string "likeable_type"
+    t.bigint "likeable_id"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["post_id"], name: "index_likes_on_post_id"
-    t.index ["user_id"], name: "index_likes_on_user_id"
+    t.index ["likeable_type", "likeable_id"], name: "index_likes_on_likeable_type_and_likeable_id"
   end
 
   create_table "pets", force: :cascade do |t|
@@ -53,7 +54,7 @@ ActiveRecord::Schema.define(version: 2019_12_30_011227) do
 
   create_table "posts", force: :cascade do |t|
     t.integer "user_id"
-    t.string "content"
+    t.text "content"
     t.integer "pet_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -75,12 +76,10 @@ ActiveRecord::Schema.define(version: 2019_12_30_011227) do
     t.datetime "last_sign_in_at"
     t.inet "current_sign_in_ip"
     t.inet "last_sign_in_ip"
-    t.string "pet_id"
+    t.string "pet_id", default: [], array: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 
-  add_foreign_key "likes", "posts"
-  add_foreign_key "likes", "users"
 end

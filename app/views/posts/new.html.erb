@@ -9,7 +9,8 @@
     <%= f.input :video %>
 <% 
 =end %>
-  <%= f.collection_select :pet_id, Pet.where(:user_id => current_user.id), :id, :name %>
+    <%= f.collection_select :pet_id, Pet.where(:user_id => current_user.id), :id, :name %>
+
     <%= f.submit 'Create' %>
     <br />
   <% end %>
