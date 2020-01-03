@@ -10,6 +10,7 @@ class User < ApplicationRecord
   has_many :comments
   has_many :posts
   has_many :pets
+  has_many :likes, dependent: :destroy
 
   def login
     @login || self.username || self.email
