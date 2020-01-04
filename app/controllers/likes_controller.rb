@@ -13,7 +13,7 @@ class LikesController < ApplicationController
 
   def destroy
     if !(already_liked?)
-      flash[:notice] = "You did not like this post."
+      flash[:notice] = "You have not liked this post. Cannot unlike."
     else
       @like.destroy
     end
