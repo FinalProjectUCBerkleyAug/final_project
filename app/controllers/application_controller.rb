@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+  # Add username to devise gem
+  # https://github.com/plataformatec/devise/wiki/How-To:-Allow-users-to-sign-in-using-their-username-or-email-address
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   protected
