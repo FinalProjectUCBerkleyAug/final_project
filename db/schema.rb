@@ -54,9 +54,9 @@ ActiveRecord::Schema.define(version: 2020_01_03_023826) do
   create_table "posts", force: :cascade do |t|
     t.integer "user_id"
     t.text "content"
-    t.integer "pet_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "pet_id"
     t.string "video"
   end
 
