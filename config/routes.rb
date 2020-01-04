@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
-  resources :pets
+  root 'posts#landing'
   devise_for :users, :controllers => {:registrations => "registrations"}
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root 'posts#landing'
   resources :posts do
     resources :comments do
       :create
@@ -12,6 +11,7 @@ Rails.application.routes.draw do
     end
     resources :likes
   end
+  resources :pets
   resources :users, only: :show
 
 # Routes for Google authentication
