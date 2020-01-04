@@ -11,7 +11,9 @@ Rails.application.routes.draw do
     end
     resources :likes
   end
-  resources :pets
+  resources :pets do
+    resources :favors
+  end
   resources :users, only: :show
 
 # Routes for Google authentication
