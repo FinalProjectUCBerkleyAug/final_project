@@ -13,7 +13,7 @@ class FavorsController < ApplicationController
 
   def destroy
     if !(already_favored?)
-      flash[:notice] = "You did not favor this pet. Cannot unfavor."
+      flash[:notice] = "You have not favored this pet. Cannot unfavor."
     else
       @favor.destroy
     end
