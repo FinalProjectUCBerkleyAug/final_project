@@ -1,5 +1,6 @@
 class RecommendationsController < ApplicationController
   def index
-    @posts=Post.order("RANDOM()").limit(10)
+    posts = Post.last(50)
+    @rec_posts = posts.sample(8)
   end
 end
