@@ -3,5 +3,6 @@ class Post < ApplicationRecord
   has_many :comments
   belongs_to :user
   belongs_to :pet
+  has_many :likes, dependent: :destroy
 
 end

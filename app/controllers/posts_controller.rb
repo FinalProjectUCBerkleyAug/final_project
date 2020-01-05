@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user!, except:[:landing]
+
   def index
     @posts = Post.timeline(current_user).order('created_at DESC').paginate(page: params[:page], per_page: 10)
   end
@@ -20,9 +22,15 @@ class PostsController < ApplicationController
     @username = @post.user.username
   end
 
+  def create
+    @post = current_user.posts.create(post_params)
+    redirect_to posts_path
+  end
+
   private
 
   def post_params
     params.require(:post).permit(:content, :user_id, :pet_id, :photo, :video)
   end
+
 end

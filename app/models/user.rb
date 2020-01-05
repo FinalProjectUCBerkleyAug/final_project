@@ -7,13 +7,17 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, 
          :trackable, :authentication_keys => {email: true, login: false}
 
-#  has_many :comments
+  has_many :comments
   has_many :posts
-  has_many :likes
+  has_many :pets
+  has_many :likes, dependent: :destroy
+  has_many :favors, dependent: :destroy
 
   def login
     @login || self.username || self.email
   end
+
+ 
 
   def self.find_for_database_authentication(warden_conditions)
     conditions = warden_conditions.dup
