@@ -1,21 +1,24 @@
 <body>  
   <div class="container"> 
-    <h1 id="greeting">Hello, Human. Check out these good pets.</h1> 
-    <div class="row"> 
-      <div class="col-sm-4 post"> 
+    <h1 id="greeting">Hello, Human. Check out these good pets.</h1>
+    <br /> 
+    <div class="row">
 
-      </div>  
-      <div class="col-sm-4 post"> 
+      <!-- Landing posts -->
+      <div class="row landing-posts-container"> 
+        <% @random_posts.each do |post| %>
+          <div class="col-sm-4 landing-post"> 
+            <h3><%= post.user.username %></h3>
+          </div> 
+        <% end %>
+      </div>
 
-      </div>  
-      <div class="col-sm-4 post"> 
-
-      </div>  
-      <div class="col-6 offset-4">  
-        <%= link_to user_session_path do %> 
+      <!-- Buttons for log in and Sign up -->
+      <div class="col-6 offset-4">
+        <%= link_to new_user_session_path do %> 
           <button type="button" class="btn btn-dark btn-lg" id="homepage-buttons">Log In</button> 
         <% end %> 
-        <%= link_to new_user_session_path do %> 
+        <%= link_to new_user_registration_path do %> 
           <button type="button" class="btn btn-dark btn-lg" id="homepage-buttons">Sign Up</button>  
         <% end %> 
       </div>  

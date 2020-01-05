@@ -6,7 +6,10 @@ class PostsController < ApplicationController
   end
 
   def landing
-
+    # Pull most recent 15 posts from db
+    last_ten = Post.last(15);
+    #randomly choose 3 posts to display
+    @random_posts = last_ten.sample(3);
   end
 
   def new
