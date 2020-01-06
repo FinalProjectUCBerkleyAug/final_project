@@ -13,12 +13,6 @@ Rails.application.routes.draw do
     resources :likes
   end
   resources :users, only: :show
-<<<<<<< HEAD
 
-# Routes for Google authentication
-#get ‘auth/:provider/callback’, to: ‘sessions#googleAuth’
-#get ‘auth/failure’, to: redirect(‘/’)
-=======
   resources :recommendations, only: [:index]
->>>>>>> 661590e36fee1144f3ab20d2991923a0956bfc62
 end
