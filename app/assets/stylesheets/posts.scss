@@ -5,11 +5,17 @@
 #greeting {
   text-align: center;
 }
-.post {
-  height: 400px;
-}
 #greeting {
   font-weight: bold;
+}
+.landing-posts-container {
+  margin: 10px;
+}
+.landing-post {
+  height: 300px;
+  width: 300px;
+  padding: 8px;
+  text-align: center;
 }
 #homepage-buttons {
   margin-left: 30px;

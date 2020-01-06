@@ -29,11 +29,10 @@
             <a class="nav-link" href="#">Notifications</a>
           </li>
         </ul>
-        <a class="navbar-brand navbar-brand-centered" href="#">Navbar</a>
+        <%= link_to "Navbar", root_path, class: 'navbar-brand navbar-brand-centered' %>
       </div>
 
       <ul class="navbar-nav mr-auto logins">
-<<<<<<< HEAD
         <% if user_signed_in? %>
           <li class="nav-item active">
             <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'nav-link' %>
@@ -46,14 +45,6 @@
             <%= link_to 'Sign up', new_user_registration_path, class: "nav-link" %>
           </li>
         <% end %>
-=======
-        <li class="nav-item active">
-          <%= link_to 'Log In', user_session_path, class: 'nav-link' %>
-        </li>
-        <li class="nav-item active">
-          <%= link_to 'Sign Up', new_user_session_path, class: 'nav-link' %>
-        </li>
->>>>>>> master
       </ul>
     </nav>
 

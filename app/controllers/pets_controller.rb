@@ -29,6 +29,11 @@ class PetsController < ApplicationController
 
     respond_to do |format|
       if @pet.save
+        new_petId = @pet.id
+        petId = current_user.pet_id
+        petId << new_petId
+        current_user.pet_id = petId
+        current_user.save
         format.html { redirect_to @pet, notice: 'Pet was successfully created.' }
         format.json { render :show, status: :created, location: @pet }
       else

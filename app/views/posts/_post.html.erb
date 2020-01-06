@@ -11,5 +11,6 @@
         <% end %>
 
   <h5><%= link_to post.content, post_path(post) %></h5>
+  <p><%= post.likes.count %> Like(s)</p>
   <p><%= post.created_at.strftime("%B, %d %Y, %l:%M%P") %></p>
 </div>

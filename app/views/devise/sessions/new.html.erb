@@ -7,7 +7,12 @@
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
       <div class="field">
-        <h5><% f.label :login %>email: </h5>
+        <h5><% f.label :email %>email:</h5>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      </div>
+
+      <div class="field">
+        <h5><% f.label :login %>username <br />(optional): </h5>
         <%= f.text_field :login %>
       </div>
 

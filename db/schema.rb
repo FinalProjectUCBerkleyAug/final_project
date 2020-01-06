@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_30_011227) do
+ActiveRecord::Schema.define(version: 2020_01_03_203710) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,15 @@ ActiveRecord::Schema.define(version: 2019_12_30_011227) do
     t.datetime "updated_at", null: false
     t.index ["post_id"], name: "index_comments_on_post_id"
     t.index ["user_id", "post_id"], name: "index_comments_on_user_id_and_post_id"
+  end
+
+  create_table "favors", force: :cascade do |t|
+    t.bigint "pet_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["pet_id"], name: "index_favors_on_pet_id"
+    t.index ["user_id"], name: "index_favors_on_user_id"
   end
 
   create_table "likes", force: :cascade do |t|
@@ -75,12 +84,14 @@ ActiveRecord::Schema.define(version: 2019_12_30_011227) do
     t.datetime "last_sign_in_at"
     t.inet "current_sign_in_ip"
     t.inet "last_sign_in_ip"
-    t.string "pet_id"
+    t.string "pet_id", default: [], array: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 
+  add_foreign_key "favors", "pets"
+  add_foreign_key "favors", "users"
   add_foreign_key "likes", "posts"
   add_foreign_key "likes", "users"
 end
