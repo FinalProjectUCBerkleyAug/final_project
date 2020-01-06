@@ -16,11 +16,8 @@ Rails.application.routes.draw do
   end
   resources :users, only: :show
 
-<<<<<<< HEAD
-=======
 # Routes for Google authentication
 #get ‘auth/:provider/callback’, to: ‘sessions#googleAuth’
 #get ‘auth/failure’, to: redirect(‘/’)
->>>>>>> 7342b28f8ef3675b9f66325f140087bf2d83d15e
   resources :recommendations, only: [:index]
 end

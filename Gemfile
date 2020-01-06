@@ -69,7 +69,8 @@ gem 'omniauth-google-oauth2'
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 
-gem 'carrierwave', '~> 1.0'
+gem 'carrierwave', '~> 2.0'
+gem "figaro"
 gem 'jquery-rails'
 gem 'popper_js', '~> 1.9', '>= 1.9.9'
 gem 'bootstrap', '~> 4.4.1'

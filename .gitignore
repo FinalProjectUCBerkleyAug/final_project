@@ -29,3 +29,6 @@
 log/development.log
 tmp
 **/.DS_Store
+
+# Ignore application configuration
+/config/application.yml
