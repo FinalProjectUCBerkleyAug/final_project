@@ -7,8 +7,9 @@
       <!-- Landing posts -->
       <div class="row landing-posts-container"> 
         <% @random_posts.each do |post| %>
-          <div class="col-sm-4 landing-post"> 
-            <h3><%= post.user.username %></h3>
+          <div class="col-sm-4 landing-post">
+            <h3><%= post.content %></h3> 
+            <h5><%= post.user.username %></h5>
           </div> 
         <% end %>
       </div>
