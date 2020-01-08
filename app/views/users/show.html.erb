@@ -1,0 +1,14 @@
+<body>
+  <div class="container">
+    <%= link_to edit_user_registration_path do %>
+      <button type="button" class="btn btn-dark float-right">Edit</button>
+    <% end %>
+    <div class="user-info">
+      <h1><%= @user.username %></h1>
+      <br />
+      <%= link_to new_pet_path do %>
+        <button type="button" class="btn btn-dark btn-lg">+ Pet</button>
+      <% end %>
+    </div>
+  </div>
+</body> 
