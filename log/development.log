@@ -12137,3 +12137,4 @@ puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
 puma (3.12.2) lib/puma/server.rb:476:in `process_client'
 puma (3.12.2) lib/puma/server.rb:334:in `block in run'
 puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+DEPRECATION WARNING: #fog_provider is deprecated and has no effect (called from block in <top (required)> at /vagrant/src/final_team_project/final_project/config/initializers/carrierwave.rb:4)

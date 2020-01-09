@@ -82,3 +82,4 @@ end
 gem 'will_paginate', '~> 3.0.5'
 gem 'carrierwave-aws'
 gem 'simple_form'
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
