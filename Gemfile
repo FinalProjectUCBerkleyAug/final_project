@@ -82,3 +82,4 @@ end
 gem 'will_paginate', '~> 3.0.5'
 gem 'carrierwave-aws'
 gem 'simple_form'
+gem 'font-awesome-rails', '~> 4.5'
