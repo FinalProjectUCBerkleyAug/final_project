@@ -8,6 +8,8 @@ class Notifications
         @getNewNotifications()
       ), 5000
 
+    @getNewNotifications()
+
   getNewNotifications: ->
     $.ajax(
       url: "/notifications.json"
@@ -26,7 +28,9 @@ class Notifications
     )
 
   handleSuccess: (data) =>
+    console.log(data)
     items = [];
+    $("[data-behavior='notification-items']").html('');
     $.each data, (index, notification) =>
       element = document.createElement('a');
       element.classList.add('dropdown-item');

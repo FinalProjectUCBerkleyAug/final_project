@@ -2,8 +2,8 @@ class NotificationsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @messages = Notification.where(recipient: current_user)
-    @notifications = @messages.unread
+    @notifications = Notification.where(recipient: current_user).unread
+#    render :json => @notifications
   end
 
   def mark_as_read

@@ -6,5 +6,10 @@ json.array! @notifications do |notification|
   json.notifiable do #notification.notifiable
     json.type "a #{notification.notifiable.class.to_s.underscore.humanize.downcase}"
   end
-  json.url post_path(notification.notifiable.post_id)
+  if notification.action === "posted"
+    json.url post_path(notification.notifiable.post_id)
+  elsif notification.action === "liked"
+    json.url post_path(notification.notifiable)
+  end
+
 end
