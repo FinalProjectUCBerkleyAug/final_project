@@ -10,6 +10,8 @@ json.array! @notifications do |notification|
     json.url post_path(notification.notifiable.post_id)
   elsif notification.action === "liked"
     json.url post_path(notification.notifiable)
+  else notification.action === "favored"
+    json.url pet_path(notification.notifiable)
   end
 
 end
