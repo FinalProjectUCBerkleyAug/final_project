@@ -10,5 +10,10 @@
         <button type="button" class="btn btn-dark btn-lg">+ Pet</button>
       <% end %>
     </div>
+    <%= @pets.each do |pet| %>
+      <div class="pet-info">
+        <h3><%= pet.name %></h3>
+      </div>
+    <% end %>
   </div>
 </body> 
