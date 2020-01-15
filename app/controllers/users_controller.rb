@@ -2,8 +2,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    petId = current_user.pet_id
-    @pets = Pet.find(params[petId])
+    @pets = Pet.includes(:posts).where(user_id: current_user)
   end
 
 end

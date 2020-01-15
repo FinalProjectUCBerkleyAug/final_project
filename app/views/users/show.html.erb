@@ -10,10 +10,24 @@
         <button type="button" class="btn btn-dark btn-lg">+ Pet</button>
       <% end %>
     </div>
-    <%= @pets.each do |pet| %>
-      <div class="pet-info">
-        <h3><%= pet.name %></h3>
-      </div>
-    <% end %>
+    <div class="card-deck" id="profile-pets">
+      <% @pets.each do |pet| %>
+        <div class="card text-center border-light rounded w-50">
+          <div class="pet-info card-body">
+            <h3 class="card-title pet-name">@<%= pet.name %></h3>
+            <%= link_to new_post_path do %>
+              <button type="button" class="btn btn-dark add-post">+ Post</button>
+            <% end %>
+            <div class="card-deck pet-posts">
+              <% pet.posts.each do |post| %>
+                <div class="card w-50 text-center border-light">
+                  <%= post.content %>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
   </div>
 </body> 
