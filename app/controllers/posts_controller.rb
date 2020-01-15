@@ -20,6 +20,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @comment = Comment.new
     @username = @post.user.username
+    @pet = Pet.find(params[:id])
   end
 
   def create
