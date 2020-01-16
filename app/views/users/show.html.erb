@@ -1,33 +1,51 @@
 <body>
-  <div class="container">
-    <%= link_to edit_user_registration_path do %>
-      <button type="button" class="btn btn-dark float-right">Edit</button>
+  <div class="container-fluid">
+    <!-- Edit button for users viewing own profile -->
+    <% if current_user === @user %>
+      <%= link_to edit_user_registration_path do %>
+        <button type="button" class="btn btn-dark float-right">Edit</button>
+      <% end %>
     <% end %>
-    <div class="user-info">
+
+    <div id="user-info">
       <h1><%= @user.username %></h1>
-      <br />
-      <%= link_to new_pet_path do %>
-        <button type="button" class="btn btn-dark btn-lg">+ Pet</button>
+      <h5><%= @favors %></h5>
+      <% if current_user === @user %>
+        <%= link_to new_pet_path do %>
+          <button type="button" class="btn btn-dark btn-lg">+ Pet</button>
+        <% end %>
       <% end %>
     </div>
-    <div class="card-deck" id="profile-pets">
+
+    <!-- Create cards for each pet -->
+    <div class="row" id="profile-pets">
       <% @pets.each do |pet| %>
-        <div class="card text-center border-light rounded w-50">
-          <div class="pet-info card-body">
+        <div class="card col-6-lg col-10-sm offset-1-sm text-center border-light rounded pet-info">
+          <div class="card-body">
             <h3 class="card-title pet-name">@<%= pet.name %></h3>
-            <%= link_to new_post_path do %>
-              <button type="button" class="btn btn-dark add-post">+ Post</button>
+            <% if current_user === @user %>  
+              <%= link_to new_post_path do %>
+                <button type="button" class="btn btn-dark add-post">+ Post</button>
+              <% end %>
             <% end %>
-            <div class="card-deck pet-posts">
-              <% pet.posts.each do |post| %>
-                <div class="card w-50 text-center border-light">
-                  <%= post.content %>
+
+            <!-- Create cards for last 4 posts -->
+            <div class="row" id="pet-posts">
+              <% pet.posts.last(4).each do |post| %>
+                <div class="col-6-lg col-12-md text-center">
+                  <div class="card profile-posts text-center border-light" style="width: 10rem;">
+                    <div class="card-body">
+                      <p class="post-content"><%= post.content %></p>
+                    </div>
+                  </div>
                 </div>
               <% end %>
             </div>
+
           </div>
         </div>
       <% end %>
     </div>
+
   </div>
 </body> 

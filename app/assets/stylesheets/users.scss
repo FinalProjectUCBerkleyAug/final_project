@@ -2,12 +2,20 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.user-info {
+.container-fluid {
+  justify-content: center;
+  align-content: center;
+}
+#user-info {
   text-align: center;
+}
+.pet-info {
+  flex-basis: auto;
+  flex-wrap: wrap;
 }
 #profile-pets {
   margin-top: 30px;
 }
-.pet-posts {
-  margin: 15px;
+.profile-posts {
+  margin: 5px;
 }
