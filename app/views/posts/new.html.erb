@@ -2,13 +2,10 @@
   <h1>Enter Your Post Here</h1>
   <%= simple_form_for @posts do |f| %>
     <%= f.input :content %>
-<% 
-=begin %>
-    Pictures and Videos pending for setup.
-    <%= f.input :picture %>
-    <%= f.input :video %>
-<% 
-=end %>
+ 
+    <%= f.input :picture, as: :file %>
+    <%= f.input :video, as: :file %> 
+
     <%= f.collection_select :pet_id, Pet.where(:user_id => current_user.id), :id, :name %>
 
     <%= f.submit 'Create' %>

@@ -20,7 +20,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @comment = Comment.new
     @username = @post.user.username
-    @pet = Pet.find(params[:id])
+    @pet = @post.pet_id
   end
 
   def create
@@ -31,7 +31,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:content, :user_id, :pet_id, :photo, :video)
+    params.require(:post).permit(:content, :user_id, :pet_id, :picture, :video)
   end
 
 end

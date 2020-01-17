@@ -1,6 +1,8 @@
 <h1>Post</h1>
 <p>Post Details - containing pictures, video, pet_id(pet_tag), and comments</p>
 
+<%= image_tag @post.picture.to_s %>
+
 <h5><%= @post.content %></h5>
 
 <p>Posted by <%= @post.user.username %></p>
