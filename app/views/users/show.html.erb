@@ -9,7 +9,7 @@
 
     <div id="user-info">
       <h1><%= @user.username %></h1>
-      <h5><%= @favors %></h5>
+      <h5><%= @favors %> Pets Favored</h5>
       <% if current_user === @user %>
         <%= link_to new_pet_path do %>
           <button type="button" class="btn btn-dark btn-lg">+ Pet</button>
@@ -22,7 +22,7 @@
       <% @pets.each do |pet| %>
         <div class="card col-6-lg col-10-sm offset-1-sm text-center border-light rounded pet-info">
           <div class="card-body">
-            <h3 class="card-title pet-name">@<%= pet.name %></h3>
+            <h3 class="card-title pet-name">@<%= link_to pet.name, pet_path(pet) %></h3>
             <% if current_user === @user %>  
               <%= link_to new_post_path do %>
                 <button type="button" class="btn btn-dark add-post">+ Post</button>
@@ -30,13 +30,11 @@
             <% end %>
 
             <!-- Create cards for last 4 posts -->
-            <div class="row" id="pet-posts">
+            <div class="row card-deck" id="pet-posts">
               <% pet.posts.last(4).each do |post| %>
-                <div class="col-6-lg col-12-md text-center">
-                  <div class="card profile-posts text-center border-light" style="width: 10rem;">
-                    <div class="card-body">
-                      <p class="post-content"><%= post.content %></p>
-                    </div>
+                <div class="card profile-posts col-6-lg col-12-md text-center border-light">
+                  <div class="card-body">
+                    <p class="post-content"><%= post.content %></p>
                   </div>
                 </div>
               <% end %>
@@ -46,6 +44,9 @@
         </div>
       <% end %>
     </div>
+
+    <br />
+    <br />
 
   </div>
 </body> 
