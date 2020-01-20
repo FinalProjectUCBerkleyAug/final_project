@@ -1,24 +1,22 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Pets Be Social
 
-Things you may want to cover:
+Pets Be Social is a social media web app for humans who are obsessed with their pets. Users can create profiles for their pets, share pictures and videos, and interact with other pets through favoriting, liking and commenting.
 
-* Ruby version
+Check it out at [Pets Be Social](https://petsbesocial.herokuapp.com/)
 
-* System dependencies
+## Technologies:
 
-* Configuration
+* Ruby on Rails
+* AWS S3
+* JavaScript
+* Postgresql
+* SCSS
+* Devise
 
-* Database creation
+## Authors
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+[Melanie Locke](https://github.com/MelanieALocke)
+[Mia Zou](https://github.com/MiaZou)
+[Kevin Wu](https://github.com/kevinjwu30)

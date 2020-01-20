@@ -1,6 +1,10 @@
 <h1>Post</h1>
 <p>Post Details - containing pictures, video, pet_id(pet_tag), and comments</p>
 
+<h5><%= @post.content %></h5>
+
+<p>Posted by <%= @post.user.username %></p>
+
 <% pre_like = @post.likes.find { |like| like.user_id == current_user.id} %>
 <% if pre_like %>
   <%= button_to 'Unlike', post_like_path(@post, pre_like), method: :delete %>
@@ -8,6 +12,10 @@
   <%= button_to 'Like', post_likes_path(@post), method: :post %>
 <% end %>
 <p><%= @post.likes.count %> Like(s)</p>
+
+<% if @pet.name != "other" %>
+  <%= link_to "View " + @pet.name, pet_path(@pet) %>
+<% end %>
 
 
 <h1>Comments</h1>
