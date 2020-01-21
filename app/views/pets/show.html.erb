@@ -22,9 +22,14 @@
 
 <% pre_favor = @pet.favors.find { |favor| favor.user_id == current_user.id} %>
 <% if pre_favor %>
-  <%= button_to 'Unfavor', pet_favor_path(@pet, pre_favor), method: :delete %>
+  <%= link_to pet_favor_path(@pet, pre_favor), method: :delete do %>
+    UnFavor
+  <% end %>
 <% else %>
-  <%= button_to 'Favor', pet_favors_path(@pet), method: :post %>
+  <%= link_to pet_favors_path(@pet), method: :post do %>
+    <i class="fa fa-paw"></i>
+    High Paw - Favor this pet!
+  <% end %>
 <% end %>
 <p><%= @pet.favors.count %> Favor(s)</p>
 

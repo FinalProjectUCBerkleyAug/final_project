@@ -7,9 +7,14 @@
 
 <% pre_like = @post.likes.find { |like| like.user_id == current_user.id} %>
 <% if pre_like %>
-  <%= button_to 'Unlike', post_like_path(@post, pre_like), method: :delete %>
+  <%= link_to post_like_path(@post, pre_like), method: :delete do %>
+    Unlike!
+  <% end %>
 <% else %>
-  <%= button_to 'Like', post_likes_path(@post), method: :post %>
+  <%= link_to post_likes_path(@post), method: :post do %>
+    <i class="fa fa-paw"></i>
+    High Paw - Like this post!
+  <% end %>
 <% end %>
 <p><%= @post.likes.count %> Like(s)</p>
 
@@ -29,7 +34,10 @@
 <div>
   <%= simple_form_for @comment, url: post_comments_path(@post) do |f| %>
     <%= f.input :message %>
-    <%= f.submit "Add a comment" %>
+    <div class="form-submit-comments">
+      <span class="fa fa-comments"></span>
+      <%= f.submit "Submit", data: {disable_with: "<i class='fa fa-comments'></i>"} %>
+    </div>
   <% end %>
 </div>
 
