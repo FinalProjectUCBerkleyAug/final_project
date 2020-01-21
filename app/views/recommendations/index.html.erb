@@ -5,7 +5,7 @@
     <div class="row rec-posts-container">
       <% @rec_posts.each do |post| %>
         <div class="col-lg-3 col-md-6 col-sm-10 rec-post">
-          <h3><%= post.user.username %></h3><br />
+          <h3><%= link_to post.user.username, user_path(post.user) %></h3><br />
           <h5><%= post.content %></h5>
         </div>
       <% end %>

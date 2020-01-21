@@ -15,11 +15,11 @@ Rails.application.routes.draw do
     resources :favors
   end
   resources :users, only: :show
+  resources :recommendations, only: [:index]
 
 # Routes for Google authentication
 #get ‘auth/:provider/callback’, to: ‘sessions#googleAuth’
 #get ‘auth/failure’, to: redirect(‘/’)
-  resources :recommendations, only: [:index]
   resources :notifications do
     collection do
       post :mark_as_read

@@ -47,6 +47,9 @@
             </div>
           </li>
           <li class="nav-item active">
+            <%= link_to 'Profile', user_path(current_user), class: "nav-link" %>
+          </li>
+          <li class="nav-item active">
             <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'nav-link' %>
           </li>
         <% else %>
@@ -64,7 +67,7 @@
     <p class="alert"><%= alert %></p>
 
     <div class="footer">
-      <h6 id="build-credit">Built by Unicorns</h6>
+      <h6 id="build-credit"><%= link_to 'Build by Mia, Melanie + Kevin', 'https://github.com/FinalProjectUCBerkleyAug/final_project' %></h6>
     </div>
     <%= yield %>
   </body>
