@@ -20,4 +20,9 @@ Rails.application.routes.draw do
 # Routes for Google authentication
 #get ‘auth/:provider/callback’, to: ‘sessions#googleAuth’
 #get ‘auth/failure’, to: redirect(‘/’)
+  resources :notifications do
+    collection do
+      post :mark_as_read
+    end
+  end
 end

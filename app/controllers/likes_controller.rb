@@ -7,6 +7,9 @@ class LikesController < ApplicationController
       flash[:notice] = "Already liked!"
     else
       @post.likes.create(user_id: current_user.id)
+      if current_user != @post.user
+        Notification.create(recipient: @post.user, actor: current_user, action: "liked", notifiable: @post)
+      end
     end
     redirect_to post_path(@post)
   end

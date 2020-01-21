@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
     <title>PetsBeSocial</title>
@@ -13,7 +13,7 @@
   <body>
     <!-- Navigation -->
     <nav class="navbar navbar-expand-md navbar-dark">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-behavior="notifications-link" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
@@ -34,6 +34,18 @@
 
       <ul class="navbar-nav mr-auto logins">
         <% if user_signed_in? %>
+          <li class="nav-item btn-group" data-behavior="notifications">
+            <a class="dropdown-toggle nav-link" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <%= fa_icon "bell" %> <span data-behavior="unread-count"></span>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenu1" data-behavior="notification-items">
+              <!--  
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+              -->
+            </div>
+          </li>
           <li class="nav-item active">
             <%= link_to 'Profile', user_path(current_user), class: "nav-link" %>
           </li>
@@ -57,7 +69,6 @@
     <div class="footer">
       <h6 id="build-credit"><%= link_to 'Build by Mia, Melanie + Kevin', 'https://github.com/FinalProjectUCBerkleyAug/final_project' %></h6>
     </div>
-
     <%= yield %>
   </body>
 </html>

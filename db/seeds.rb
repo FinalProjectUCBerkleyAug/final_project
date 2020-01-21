@@ -27,3 +27,4 @@ Post.create!(content: 'Has anyone seen Gary?', user_id: user_S.id, pet_id: pet_S
 Post.create!(content: 'Gary is missing!', user_id: user_S.id, pet_id: pet_S.id)
 Post.create!(content: 'Nevermind, he was taking a nap.', user_id: user_S.id, pet_id: pet_S.id)
 Post.create!(content: 'Patrick are you home?', user_id: user_S.id, pet_id: pet_S.id)
+
