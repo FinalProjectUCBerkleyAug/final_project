@@ -10,7 +10,6 @@
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
-<<<<<<< HEAD
 /tmp/cache/*
 
 !/log/.keep
@@ -28,9 +27,6 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
-<<<<<<< HEAD
-log/development.log
-tmp
 **/.DS_Store
 
 # Ignore application configuration
