@@ -3,8 +3,7 @@
   <%= simple_form_for @posts do |f| %>
     <%= f.input :content %>
  
-    <%= f.input :picture, as: :file %>
-    <%= f.input :video, as: :file %> 
+    <%= f.input :picture %>
 
     <%= f.collection_select :pet_id, Pet.where(:user_id => current_user.id), :id, :name %>
 
