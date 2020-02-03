@@ -2,6 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+// Landing/Root Page
 #greeting {
   text-align: center;
 }
@@ -17,7 +19,25 @@
   padding: 8px;
   text-align: center;
 }
+
+// Create Post Page
+#create-post-picture-field {
+  margin: auto;
+}
+.new-post-content {
+  padding: 10px;
+}
+
+// Posts Index Page
+.post-container {
+  width: 50%;
+  padding: 8px;
+}
 .post-picture {
   max-height: 400px;
   max-width: 400px;
+  padding-right: 8px;
+}
+.post-username {
+  text-weight: bold;
 }

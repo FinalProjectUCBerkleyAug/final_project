@@ -1,11 +1,18 @@
-<h1>Posts Page right after Signup</h1>
-<h2>My Posts</h2>
-
-<div id='posts'>
-  <% @posts.each do |post| %>
-    <%= image_tag post.picture.to_s, class: "post-picture" %>
-    <%= post.content %>
-  <% end %>
-</div>
-
-<hr />
+<body>
+  <div class="col-10 offset-1 row" id='posts-index'>
+    <% @posts.each do |post| %>
+      <div class="post-container">
+        <div class="float-left">
+          <%= image_tag post.picture.to_s, class: 'post-picture' %>
+        </div>
+        <div class="post-content">
+          <h5 class="post-username"><%= post.pet.name %></h5>
+          <br />
+          <p><%= post.content %></p>
+        </div>
+        <br />
+        <br />
+      </div>
+    <% end %>
+  </div>
+</body>
