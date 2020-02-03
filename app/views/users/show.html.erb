@@ -34,6 +34,7 @@
               <% pet.posts.last(4).each do |post| %>
                 <div class="card profile-posts col-6-lg col-12-md text-center border-light">
                   <div class="card-body">
+                    <%= image_tag post.picture.to_s, class: "profile-post-pic" %>
                     <p class="post-content"><%= post.content %></p>
                   </div>
                 </div>
