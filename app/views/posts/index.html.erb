@@ -6,6 +6,13 @@
           <%= image_tag post.picture.to_s, class: 'post-picture' %>
         </div>
         <div class="post-content">
+          <%= link_to '#' do %>
+            <i class="fa fa-paw fa-2x"></i>
+          <% end %>
+          <%= link_to '#' do %>
+            <i class="fa fa-comment fa-2x"></i>
+          <% end %>
+          <br />
           <h5 class="post-username"><%= post.pet.name %></h5>
           <br />
           <p><%= post.content %></p>

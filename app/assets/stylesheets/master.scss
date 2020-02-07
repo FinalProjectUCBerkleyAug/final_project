@@ -44,6 +44,9 @@ body {
   background-color: #999999;
   border: #999999;
 }
+a:hover {
+  backgroud-color: #BD3A3A;
+}
 
 // Gray box w/ round edges
 .login, .signup, .forgotpassword, .editpassword, .deviseconfirm, .new-post-container {
