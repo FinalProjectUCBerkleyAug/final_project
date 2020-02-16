@@ -17,6 +17,10 @@ body {
   background-color: #C4C0C6;
   font-family: 'PT Sans', sans-serif;
 }
+.navbar-item .navlink:hover {
+  color: #BD3A3A;
+  background-color: none;
+}
 .navbar>.container-fluid .nav-brand-centered {
   margin-left: 40%;
 }
@@ -44,8 +48,12 @@ body {
   background-color: #999999;
   border: #999999;
 }
-a:hover {
-  backgroud-color: #BD3A3A;
+a {
+  color: black;
+  &:hover {
+    color: #BD3A3A;
+    text-decoration: none;
+  }
 }
 
 // Gray box w/ round edges

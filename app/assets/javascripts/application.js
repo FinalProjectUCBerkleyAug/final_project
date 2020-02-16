@@ -19,9 +19,6 @@
 //= require tether
 //= require bootstrap-sprockets
 //= require_tree .
-<<<<<<< HEAD
-//= require bootstrap
-=======
 //= require bootstrap
 //= require turbolinks
->>>>>>> master
+

@@ -6,14 +6,13 @@
           <%= image_tag post.picture.to_s, class: 'post-picture' %>
         </div>
         <div class="post-content">
-          <%= link_to '#' do %>
+          <h5><%= link_to '@' + post.pet.name, post_path(post), class: 'post-username' %></h5>
+          <%= link_to post_likes_path(post), method: :post do %>
             <i class="fa fa-paw fa-2x"></i>
           <% end %>
-          <%= link_to '#' do %>
+          <%= link_to post_path(post) do %>
             <i class="fa fa-comment fa-2x"></i>
           <% end %>
-          <br />
-          <h5 class="post-username"><%= post.pet.name %></h5>
           <br />
           <p><%= post.content %></p>
         </div>
