@@ -1,12 +1,12 @@
 <body>
-  <div class="col-10 offset-1 post-show-container row">
+  <div class="col-10 offset-1 row">
     <h1><%= link_to '@' + @post.pet.name, pet_path(@pet) %></h1>
 
-    <div class="col-6-lg col-10-sm">
+    <div class="float-right">
       <%= image_tag @post.picture.to_s, class: 'post-show-picture' %>
     </div>
 
-    <div class="post-content">
+    <div class="show-post-content">
       <h5><%= @post.content %></h5>
 
       <p>Posted by <%= @post.user.username %></p>
@@ -18,30 +18,29 @@
         <%= button_to 'Like', post_likes_path(@post), method: :post %>
       <% end %>
       <p><%= @post.likes.count %> Like(s)</p>
-    </div>
 
-    <h1>Comments</h1>
-    <br />
+      <h3>Comments</h3>
 
-    <% @post.comments.each do |comment| %>
-      <blockquote>
-        <b><%= comment.message %></b>
-          <%= comment.user.username %>
-      </blockquote>
-    <% end %>
-
-    <br />
-
-    <div>
-      <%= simple_form_for @comment, url: post_comments_path(@post) do |f| %>
-        <%= f.input :message %>
-        <%= f.submit "Add a comment" %>
+      <% @post.comments.each do |comment| %>
+        <blockquote>
+          <b><%= comment.message %></b>
+            <%= comment.user.username %>
+        </blockquote>
       <% end %>
+
+      <br />
+
+      <div>
+        <%= simple_form_for @comment, url: post_comments_path(@post) do |f| %>
+          <%= f.input :message %>
+          <%= f.submit "Add a comment" %>
+        <% end %>
+      </div>
     </div>
-
-    <br />
-
   </div>
+
+  <br /><br />
+
 </body>
 
 
