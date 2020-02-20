@@ -1,3 +1,31 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.container-fluid {
+  justify-content: center;
+  align-content: center;
+  margin: 0 auto;
+}
+#user-info {
+  text-align: center;
+}
+#profile-pets {
+  margin: 30px auto;
+}
+.pet-info {
+  flex-basis: auto;
+  flex-wrap: wrap;
+  min-width: 50%;
+  max-width: 50%;
+}
+#pet-posts {
+  margin: 5px auto;
+}
+.profile-posts {
+  min-width: 40%;
+  max-width: 45%;
+}
+.profile-post-pic {
+  max-height: 200px;
+}

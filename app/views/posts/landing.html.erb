@@ -8,20 +8,11 @@
       <div class="row landing-posts-container"> 
         <% @random_posts.each do |post| %>
           <div class="col-sm-4 landing-post">
+            <%= image_tag post.picture.to_s, class: "landing-post-pic" %>
             <h3><%= post.content %></h3> 
             <h5><%= post.user.username %></h5>
           </div> 
         <% end %>
-      </div>
-
-      <!-- Buttons for log in and Sign up -->
-      <div class="col-6 offset-4">
-        <%= link_to new_user_session_path do %> 
-          <button type="button" class="btn btn-dark btn-lg" id="homepage-buttons">Log In</button> 
-        <% end %> 
-        <%= link_to new_user_registration_path do %> 
-          <button type="button" class="btn btn-dark btn-lg" id="homepage-buttons">Sign Up</button>  
-        <% end %> 
       </div>  
     </div>  
   </div>  

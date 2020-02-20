@@ -7,6 +7,9 @@ class FavorsController < ApplicationController
       flash[:notice] = "Already favored!"
     else
       @pet.favors.create(user_id: current_user.id)
+      if current_user != @pet.user
+        Notification.create(recipient: @pet.user, actor: current_user, action: "favored", notifiable: @pet)
+      end
     end
     redirect_to pet_path(@pet)
   end

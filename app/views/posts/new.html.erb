@@ -1,17 +1,26 @@
-<div>
-  <h1>Enter Your Post Here</h1>
-  <%= simple_form_for @posts do |f| %>
-    <%= f.input :content %>
-<% 
-=begin %>
-    Pictures and Videos pending for setup.
-    <%= f.input :picture %>
-    <%= f.input :video %>
-<% 
-=end %>
-    <%= f.collection_select :pet_id, Pet.where(:user_id => current_user.id), :id, :name %>
+<body>  
+  <div class="new-post-container col-8 offset-2 col-12-sm offset-0-sm">
+    <div class="new-post-content col-10 offset-1">
+      <h1>Create a Post</h1>
+      <br />
 
-    <%= f.submit 'Create' %>
-    <br />
-  <% end %>
-</div>
+      <%= simple_form_for @posts do |f| %>
+        <h5>Pick your pet: <%= f.collection_select :pet_id, Pet.where(:user_id => current_user.id), :id, :name %></h5>
+
+        <br />
+
+        <h5><%= f.input :content, label: 'Add content: ' %></h5>
+
+        <br />
+     
+        <h5 id="create-post-picture-field"><%= f.input :picture, label: 'Add a picture: ' %></h5>
+
+        <br />
+        <br />
+
+        <%= f.submit 'Create', class: 'btn btn-dark btn-lg', id: 'create-post-btn' %>
+        <br />
+      <% end %>
+    </div>
+  </div>
+</body>

@@ -6,3 +6,27 @@
 </div>
 
 <hr />
+<body>
+  <div class="col-10 offset-1 row" id='posts-index'>
+    <% @posts.each do |post| %>
+      <div class="post-container">
+        <div class="float-left">
+          <%= image_tag post.picture.to_s, class: 'post-picture' %>
+        </div>
+        <div class="post-content">
+          <h5><%= link_to '@' + post.pet.name, post_path(post), class: 'post-username' %></h5>
+          <%= link_to post_likes_path(post), method: :post do %>
+            <i class="fa fa-paw fa-2x"></i>
+          <% end %>
+          <%= link_to post_path(post) do %>
+            <i class="fa fa-comment fa-2x"></i>
+          <% end %>
+          <br />
+          <p><%= post.content %></p>
+        </div>
+        <br />
+        <br />
+      </div>
+    <% end %>
+  </div>
+</body>

@@ -9,9 +9,11 @@ class User < ApplicationRecord
 
   has_many :comments
   has_many :posts
+  has_many :pictures
   has_many :pets
   has_many :likes, dependent: :destroy
   has_many :favors, dependent: :destroy
+  has_many :notifications, foreign_key: :recipient_id
 
   def login
     @login || self.username || self.email
