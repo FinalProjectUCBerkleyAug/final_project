@@ -17,6 +17,10 @@ body {
   background-color: #C4C0C6;
   font-family: 'PT Sans', sans-serif;
 }
+.navbar-item .navlink:hover {
+  color: #BD3A3A;
+  background-color: none;
+}
 .navbar>.container-fluid .nav-brand-centered {
   margin-left: 40%;
 }
@@ -44,11 +48,18 @@ body {
   background-color: #999999;
   border: #999999;
 }
+a {
+  color: black;
+  &:hover {
+    color: #BD3A3A;
+    text-decoration: none;
+  }
+}
 
-// Devise Styling
-.login, .signup, .forgotpassword, .editpassword, .deviseconfirm {
+// Gray box w/ round edges
+.login, .signup, .forgotpassword, .editpassword, .deviseconfirm, .new-post-container {
   border-radius: 80px;
-  background-color: #D5D5D5;
+  background-color: #525252;
   color: white;
   text-align: center;
   padding: 15px;
@@ -57,6 +68,8 @@ body {
   background-color: #999999;
   border-color: #999999;
 }
+
+// Devise Styling
 .devise-headings {
   font-weight: bold;
 }
