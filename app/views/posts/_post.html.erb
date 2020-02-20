@@ -1,16 +1,36 @@
-<div>
-  <%= post.user.username %>
+<div class='each-post'>
 
-        <% if false %>
-        Commenting this part out for photo uploading later
+  <div class="image-box-index">
+      <% if false %>
+      Commenting this part out for photo uploading later
 
-          <% if post.photos.present? %>
-            <%= image_tag @photo_url.to_s.last %>
-          <% end %>
-
+        <% if post.photos.present? %>
+          <%= image_tag @photo_url.to_s.last %>
         <% end %>
 
-  <h5><%= link_to post.content, post_path(post) %></h5>
-  <p><%= post.likes.count %> Like(s)</p>
-  <p><%= post.created_at.strftime("%B, %d %Y, %l:%M%P") %></p>
+      <% end %>
+  </div>
+
+  <div class="paw-index">
+    <i class="fa fa-paw"></i>
+  </div>
+
+  <div class="comment-index">
+    <%= link_to post_path(post) do %>
+      <i class="fa fa-comments"></i>
+    <% end %>
+  </div>
+
+  <div class="like-box-index">
+    <p><%= post.likes.count %> Like(s)</p>
+  </div>
+
+  <div class="created-at-box-index">
+    <p><%= post.created_at.strftime("%B, %d %Y, %l:%M%P") %></p>
+  </div>
+
+  <div class="content-box-index">
+    <h5><%= link_to post.content, post_path(post) %></h5>
+  </div>
+
 </div>
